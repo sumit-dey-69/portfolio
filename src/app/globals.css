@@ -1,0 +1,65 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/container-queries";
+@plugin "@tailwindcss/typography";
+
+:root {
+  --background: #1f1b26;
+  --foreground: #ffffff;
+  --font-roboto-mono: "Roboto Mono", monospace;
+  --font-tourney: "Tourney", sans-serif;
+}
+
+@theme {
+  --color-primary-100: hsl(204, 96%, 90%);
+  --color-primary-200: hsl(204, 96%, 80%);
+  --color-primary-300: hsl(204, 96%, 70%);
+  --color-primary-400: hsl(204, 96%, 60%);
+  --color-primary-500: hsl(206, 98%, 50%);
+  --color-primary-600: hsl(188, 97%, 53%);
+  --color-primary-700: hsl(188, 97%, 43%);
+  --color-primary-800: hsl(188, 97%, 35%);
+
+  --color-secondary-100: hsl(190, 100%, 90%);
+  --color-secondary-200: hsl(190, 100%, 80%);
+  --color-secondary-300: hsl(190, 100%, 70%);
+  --color-secondary-400: hsl(190, 100%, 60%);
+  --color-secondary-500: hsl(190, 100%, 50%);
+  --color-secondary-600: hsl(190, 100%, 40%);
+  --color-secondary-700: hsl(190, 100%, 30%);
+  --color-secondary-800: hsl(190, 100%, 20%);
+
+  --color-neutral-50: hsl(262, 17%, 13%);
+  --color-neutral-100: hsl(262, 17%, 20%);
+  --color-neutral-200: hsl(262, 17%, 30%);
+  --color-neutral-300: hsl(262, 17%, 40%);
+  --color-neutral-400: hsl(262, 17%, 50%);
+  --color-neutral-500: hsl(262, 17%, 60%);
+  --color-neutral-600: hsl(262, 17%, 70%);
+  --color-neutral-700: hsl(262, 17%, 80%);
+  --color-neutral-800: hsl(262, 17%, 90%);
+  --color-neutral-900: hsl(262, 17%, 95%);
+
+  --breakpoint-xs: 400px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+  --breakpoint-3xl: 1800px;
+
+  --container-xs: 360px;
+  --container-sm: 600px;
+  --container-md: 720px;
+  --container-lg: 960px;
+  --container-xl: 1152px;
+  --container-2xl: 1408px;
+  --container-3xl: 1728px;
+
+  --font-roboto-mono: var(--font-roboto-mono);
+  --font-tourney: var(--font-tourney);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
