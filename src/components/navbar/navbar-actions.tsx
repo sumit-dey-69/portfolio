@@ -1,5 +1,7 @@
+"use client"
 import { cn } from "@/utils/cn";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 type Props = {
   className?: string;
@@ -12,16 +14,17 @@ const pages = [
   { name: "contact", path: "/contact" },
 ];
 
-const NavbarActions = ({ className }: Props) => {
+function NavbarActions({ className }: Props) {
+  const pathname = usePathname();
   return (
     <div className={cn("space-x-4 *:hover:text-primary-500", className)}>
       {pages.map((page) => (
-        <Link key={page.name} href={page.path}>
+        <Link key={page.name} href={page.path} className={`${pathname === page.path && "text-primary-400 font-bold"}`}>
           {page.name.charAt(0).toUpperCase() + page.name.slice(1)}
         </Link>
       ))}
     </div>
   );
-};
+}
 
 export default NavbarActions;

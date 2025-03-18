@@ -8,10 +8,10 @@ type Props = PropsWithChildren<{
   className?: string;
 }>;
 
-const NavbarHamburger = ({ className, children }: Props) => {
+function NavbarHamburger({ className, children }: Props) {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div
+    <aside
       className={cn(
         "min-md:hidden flex flex-col absolute right-0 top-0 h-full",
         isOpen &&
@@ -26,9 +26,9 @@ const NavbarHamburger = ({ className, children }: Props) => {
       >
         {isOpen ? <RxCross2 className="text-[1.5em]" /> : <GiHamburgerMenu className="text-[1.5em]" />}
       </button>
-      {isOpen && <>{children}</>}
-    </div>
+      {isOpen && <div className="text-center">{children}</div>}
+    </aside>
   );
-};
+}
 
 export default NavbarHamburger;
