@@ -33,7 +33,7 @@ const socials: SocialsType[] = [
 
 function HeroIntro({ className }: Props) {
   return (
-    <div className={cn(className)}>
+    <div className={cn("@container", className)}>
       <p className="font-light text-[1.25em] -tracking-[0.125em] @xs:text-[1.75em] @sm:text-[2em] @md:text-[2.25rem]">
         Front-End Developer
       </p>
@@ -50,7 +50,7 @@ function HeroIntro({ className }: Props) {
         <p>— because every detail matters!🚀</p>
       </div>
 
-      <div className="grid grid-cols-[auto_1fr] gap-[1.5em] w-max mt-[1.75em]">
+      <div className="grid grid-cols-[auto_1fr] gap-[1.5em] w-max mt-[1.75em] ml-[0.65em]">
         <button
           type="button"
           className="@max-md:hidden hover:text-white p-[0.5em] font-bold text-sm tracking-normal flex items-center gap-[0.5em] border-[0.15em] bg-primary-500 hover:bg-primary-500/80 border-secondary-500/50 hover:border-primary-500 rounded-md cursor-pointer"
@@ -59,7 +59,7 @@ function HeroIntro({ className }: Props) {
           <BiDownload className="" />
         </button>
 
-        <div className="flex gap-[0.95em] items-center @max-md:ml-[0.75em]">
+        <div className="flex gap-[0.95em] items-center">
           {socials.map((social, index) => (
             <a
               key={`${social.name}-${index}`}

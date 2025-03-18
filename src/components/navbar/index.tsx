@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Logo from "../logo";
 import NavbarActions from "./navbar-actions";
-// import NavbarActions from "./navbar-actions";
 import NavbarHamburger from "./navbar-hamburger";
 
 function Navbar() {
