@@ -1,13 +1,18 @@
-import HeroSection from "./components/hero-section";
-import TypewriterText from "./components/type-writer-effect";
+import HeroImage from "./components/hero-image";
+import HeroIntro from "./components/hero-intro";
+import TypingAnimation from "./components/typing-animation";
 
 function Home() {
   return (
     <div className="m-auto size-full max-w-[75rem] @container grid grid-rows-[0.8fr_0.2fr] gap-10">
-      <HeroSection />
-      <TypewriterText
-        className="text-2xl italic"
-        words={["Developer", "Student", "Designer"]}
+      <div className="grid grid-cols-1 gap-10 md:grid-cols-2 @md:place-content-center @container">
+        <HeroIntro />
+        <HeroImage />
+      </div>
+
+      <TypingAnimation
+        className="text-center text-xl"
+        text="A *Developer who loves *Designs and *Learning"
       />
     </div>
   );
