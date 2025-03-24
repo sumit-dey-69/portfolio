@@ -18,7 +18,10 @@ function Navbar() {
       <Logo />
       <div className="@max-md:space-x-5 grid grid-cols-[1fr_auto] gap-5 items-center">
         <NavbarActions className="@max-md:hidden" />
-        <Button type="button" onClick={() => router.push("/contact")}>
+        <Button
+          type="button"
+          onClick={() => router.push("/contact")}
+        >
           Hire Me
         </Button>
         <NavbarHamburger>

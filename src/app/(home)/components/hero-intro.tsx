@@ -32,10 +32,11 @@ function HeroIntro({ className }: Props) {
       <TypingAnimation
         text="Rendering seamless experiences, one component at a time — because every detail matters!🚀"
         className="font-light italic text-[0.75em] @md:text-[1em] @md:mt-[1em] tracking-normal"
+        delay={0.025}
       />
 
-      <div className="max-sm:grid-cols-1 grid grid-cols-[auto_1fr] gap-[1.5em] w-max mt-[1.75em] ml-[0.65em]">
-        <Button type="button">
+      <div className="grid grid-cols-[auto_1fr] gap-[1.5em] w-max mt-[1.75em] ml-[0.65em]">
+        <Button type="button" delay={0.65}>
           <span>Download CV</span>
           <BiDownload />
         </Button>

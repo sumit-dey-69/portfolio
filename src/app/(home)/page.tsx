@@ -13,6 +13,7 @@ function Home() {
       <TypingAnimation
         className="text-center text-xl opacity-75 italic"
         text="A *Developer who loves *Designs and *Learning"
+        delay={0.05}
       />
     </div>
   );

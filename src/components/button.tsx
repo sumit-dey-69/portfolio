@@ -7,14 +7,15 @@ type Props = ComponentProps<"button"> &
   PropsWithChildren<{
     type?: "button" | "submit" | "reset";
     className?: string;
+    delay?: number;
   }>;
 
-function Button({ type, children, className, ...props }: Props) {
+function Button({ type, children, delay = 0, className, ...props }: Props) {
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1, delay: 0.2 }}
+      initial={{ opacity: 0, x: -50 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.5, delay: delay, ease: "easeIn" }}
     >
       <button
         type={type}

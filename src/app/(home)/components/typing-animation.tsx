@@ -16,7 +16,7 @@ const TypingAnimation = ({ text, className, delay = 0.1 }: Props) => {
           key={index}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: index * delay }}
+          transition={{ delay: index * delay, duration: 1 }}
         >
           {char}
         </motion.span>

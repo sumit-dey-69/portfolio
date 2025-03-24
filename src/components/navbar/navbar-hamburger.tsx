@@ -30,7 +30,7 @@ function NavbarHamburger({ className, children }: Props) {
           <GiHamburgerMenu className="text-[1.5em]" />
         )}
       </button>
-      {isOpen && <div className="text-center">{children}</div>}
+      {isOpen && children}
     </aside>
   );
 }
