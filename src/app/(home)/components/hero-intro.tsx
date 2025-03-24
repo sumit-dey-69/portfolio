@@ -25,6 +25,7 @@ function HeroIntro({ className }: Props) {
         <TypingAnimation
           text="Sumit Dey"
           delay={0.2}
+          duration={0.75}
           className="font-medium text-[3.5em] @xs:text-[4em] @sm:text-[4.25em] @md:text-[4.5em] text-primary-500"
         />
       </div>
@@ -33,10 +34,11 @@ function HeroIntro({ className }: Props) {
         text="Rendering seamless experiences, one component at a time — because every detail matters!🚀"
         className="font-light italic text-[0.75em] @md:text-[1em] @md:mt-[1em] tracking-normal"
         delay={0.025}
+        duration={0.5}
       />
 
       <div className="grid grid-cols-[auto_1fr] gap-[1.5em] w-max mt-[1.75em] ml-[0.65em]">
-        <Button type="button" delay={0.65}>
+        <Button type="button" startX={-100} endX={0} delay={0.5} ease="easeOut">
           <span>Download CV</span>
           <BiDownload />
         </Button>
