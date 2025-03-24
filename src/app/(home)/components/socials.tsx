@@ -38,7 +38,7 @@ function Socials({ className, delay = 0.1 }: Props) {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ delay: 0.1, ease: "easeIn" }}
+      transition={{ duration: 2, delay: 0.1, ease: "easeIn" }}
       className={cn("flex gap-[0.95em] items-center", className)}
     >
       {socials.map((social, index) => (

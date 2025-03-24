@@ -11,7 +11,7 @@ function Home() {
       </div>
 
       <TypingAnimation
-        className="text-center text-xl"
+        className="text-center text-xl opacity-75 italic"
         text="A *Developer who loves *Designs and *Learning"
       />
     </div>

@@ -1,3 +1,4 @@
+"use client";
 import { cn } from "@/utils/cn";
 import { PropsWithChildren, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -23,7 +24,11 @@ function NavbarHamburger({ className, children }: Props) {
         className="absolute top-0 right-0 pt-5 pr-5 *:text-neutral-500 *:hover:text-primary-500 cursor-pointer"
         onClick={() => setIsOpen(!isOpen)}
       >
-        {isOpen ? <RxCross2 className="text-[1.5em]" /> : <GiHamburgerMenu className="text-[1.5em]" />}
+        {isOpen ? (
+          <RxCross2 className="text-[1.5em]" />
+        ) : (
+          <GiHamburgerMenu className="text-[1.5em]" />
+        )}
       </button>
       {isOpen && <div className="text-center">{children}</div>}
     </aside>

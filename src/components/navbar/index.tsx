@@ -1,4 +1,5 @@
 "use client";
+import { motion } from "motion/react";
 import { useRouter } from "next/navigation";
 import Button from "../button";
 import Logo from "../logo";
@@ -8,7 +9,12 @@ import NavbarHamburger from "./navbar-hamburger";
 function Navbar() {
   const router = useRouter();
   return (
-    <nav className="flex justify-between py-4 items-center z-50 @container">
+    <motion.nav
+      className="flex justify-between py-4 items-center z-50 @container"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1, delay: 0.2 }}
+    >
       <Logo />
       <div className="@max-md:space-x-5 grid grid-cols-[1fr_auto] gap-5 items-center">
         <NavbarActions className="@max-md:hidden" />
@@ -19,7 +25,7 @@ function Navbar() {
           <NavbarActions className="grid space-y-5" />
         </NavbarHamburger>
       </div>
-    </nav>
+    </motion.nav>
   );
 }
 
