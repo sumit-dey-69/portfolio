@@ -37,14 +37,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`bg-neutral-50 text-white font-roboto-mono antialiased overflow-x-hidden min-h-screen px-5 ${tourney.variable} ${roboto_mono.variable}`}
+        className={`bg-neutral-50 text-white font-roboto-mono antialiased overflow-x-hidden min-h-screen px-5 overflow-y-scroll no-scrollbar ${tourney.variable} ${roboto_mono.variable}`}
       >
         <div className="grid grid-rows-[auto_1fr] min-h-screen">
           <Navbar />
-          <div className="md:py-10 grid grid-rows-[1fr_auto]">
+          <div className="grid grid-rows-[1fr_auto]">
             <StairTransition />
-            {/* <PageTransition>{children}</PageTransition> */}
-            {children}
+            <div className="min-h-[calc(100vh-5rem)] max-md:pb-5 md:py-10">{children}</div>
           </div>
         </div>
       </body>

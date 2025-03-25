@@ -1,5 +1,5 @@
 function ResumePage() {
-  return <div>ResumePage</div>;
+  return <div className="">ResumePage</div>;
 }
 
 export default ResumePage;

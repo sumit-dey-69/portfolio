@@ -15,8 +15,30 @@ function HeroImage({ className }: Props) {
       className={cn("flex justify-center items-center relative", className)}
     >
       <motion.div
-        className="h-auto aspect-square max-w-[25em] w-full bg-secondary-700/50 outline-5 outline-secondary-700 rounded-b-[50%] rounded-t-[50%]"
-        initial={{ borderTopLeftRadius: "70%", borderTopRightRadius: "70%" }}
+        className="absolute inset-0 rounded-full blur-[80px]"
+        initial={{ opacity: 0 }}
+        animate={{
+          opacity: [0.4, 0.6, 0.4],
+          scale: [1, 1.05, 1],
+          borderRadius: ["50%", "45%", "50%"],
+        }}
+        transition={{
+          duration: 5,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        style={{
+          background:
+            "radial-gradient(circle, rgba(0,153,255,0.6), transparent 60%)",
+        }}
+      />
+
+      <motion.div
+        className="h-auto aspect-square max-w-[25em] w-full bg-secondary-700/50 outline-5 outline-secondary-700"
+        initial={{
+          borderTopLeftRadius: "70%",
+          borderTopRightRadius: "70%",
+        }}
         animate={{
           borderTopLeftRadius: ["45%", "50%", "40%", "45%", "50%"],
           borderTopRightRadius: ["50%", "45%", "40%", "50%", "45%"],
@@ -26,7 +48,13 @@ function HeroImage({ className }: Props) {
           repeat: Infinity,
           ease: "easeInOut",
         }}
+        style={{
+          borderBottomLeftRadius: "50%",
+          borderBottomRightRadius: "50%",
+        }}
       />
+
+      {/* Profile Image */}
       <motion.img
         src="/picture.webp"
         alt="Profile Picture"

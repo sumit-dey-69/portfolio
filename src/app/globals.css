@@ -64,45 +64,14 @@
   --color-foreground: var(--foreground);
 }
 
-.typewriter-container {
-  display: inline-block;
-  margin-top: -1rem;
-}
-
-.typewriter-content{
-  position: relative;
-  display: inline-block;
-  color: transparent;
-  -webkit-text-stroke: 0.07rem var(--color-primary-500);
-  animation: display-text 16s infinite;
-  animation-delay: calc(-4s * var(--i));
-}
-
-@keyframes display-text {
-  25%,
-  100% {
-    display: none;
+@layer utilities {
+  .no-scrollbar {
+    overflow-y: auto; /* Keeps vertical scrolling */
+    scrollbar-width: none; /* Hides scrollbar in Firefox */
+    -ms-overflow-style: none; /* Hides scrollbar in IE & Edge */
   }
-}
 
-.typewriter-content::before {
-  content: attr(data-text);
-  position: absolute;
-  width: 0;
-  border-right: 2px solid var(--color-primary-500);
-  color: var(--color-primary-500);
-  white-space: nowrap;
-  overflow: hidden;
-  animation: fill-text 4s linear infinite;
-}
-
-@keyframes fill-text {
-  10%,
-  100% {
-    width: 0;
-  }
-  70%,
-  90% {
-    width: 100%;
+  .no-scrollbar::-webkit-scrollbar {
+    display: none; /* Hides scrollbar in Chrome & Safari */
   }
 }
