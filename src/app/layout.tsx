@@ -41,7 +41,7 @@ export default function RootLayout({
       >
         <div className="grid grid-rows-[auto_1fr] min-h-screen">
           <Navbar />
-          <div className="md:py-10 grid grid-rows-[auto_1fr]">
+          <div className="md:py-10 grid grid-rows-[1fr_auto]">
             <StairTransition />
             {/* <PageTransition>{children}</PageTransition> */}
             {children}

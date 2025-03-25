@@ -14,13 +14,12 @@ function HeroImage({ className }: Props) {
       transition={{ delay: 0.2, ease: "easeIn" }}
       className={cn("flex justify-center items-center relative", className)}
     >
-      {/* <motion.div className="h-auto aspect-square max-w-[25em] w-full rounded-full blur-xs bg-secondary-700/50"></motion.div> */}
       <motion.div
-        className="h-auto aspect-square max-w-[25em] w-full bg-secondary-700/50 rounded-b-[50%] rounded-t-[50%]"
-        initial={{ borderTopLeftRadius: "50%", borderTopRightRadius: "50%" }}
+        className="h-auto aspect-square max-w-[25em] w-full bg-secondary-700/50 outline-5 outline-secondary-700 rounded-b-[50%] rounded-t-[50%]"
+        initial={{ borderTopLeftRadius: "70%", borderTopRightRadius: "70%" }}
         animate={{
-          borderTopLeftRadius: ["40%", "50%", "40%", "45%", "50%"],
-          borderTopRightRadius: ["50%", "45%", "40%", "50%", "40%"],
+          borderTopLeftRadius: ["45%", "50%", "40%", "45%", "50%"],
+          borderTopRightRadius: ["50%", "45%", "40%", "50%", "45%"],
         }}
         transition={{
           duration: 5,
