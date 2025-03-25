@@ -8,17 +8,24 @@ type Props = ComponentProps<"button"> &
     type?: "button" | "submit" | "reset";
     className?: string;
     delay?: number;
-    startX?: number;
-    endX?: number;
+    duration?: number;
     ease?: string;
   }>;
 
-function Button({ type, children, delay = 0, startX, endX, ease, className, ...props }: Props) {
+function Button({
+  type,
+  children,
+  delay = 0,
+  duration = 0.5,
+  ease,
+  className,
+  ...props
+}: Props) {
   return (
     <motion.div
-      initial={{ opacity: 0, x: startX }}
-      animate={{ opacity: 1, x: endX }}
-      transition={{ duration: 0.5, delay: delay, ease: ease }}
+      initial={false}
+      animate={{ opacity: 1 }}
+      transition={{ duration: duration, delay: delay, ease: ease }}
     >
       <button
         type={type}

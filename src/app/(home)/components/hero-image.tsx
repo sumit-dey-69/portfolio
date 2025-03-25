@@ -1,15 +1,33 @@
 "use client";
+import { cn } from "@/utils/cn";
 import { motion } from "motion/react";
 
-function HeroImage() {
+type Props = {
+  className?: string;
+};
+
+function HeroImage({ className }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0 }}
       animate={{ opacity: 1, scale: 1.02 }}
       transition={{ delay: 0.2, ease: "easeIn" }}
-      className="flex justify-center items-center relative"
+      className={cn("flex justify-center items-center relative", className)}
     >
-      <motion.div className="h-auto aspect-square max-w-[25em] w-full rounded-full blur-xs bg-secondary-700/50"></motion.div>
+      {/* <motion.div className="h-auto aspect-square max-w-[25em] w-full rounded-full blur-xs bg-secondary-700/50"></motion.div> */}
+      <motion.div
+        className="h-auto aspect-square max-w-[25em] w-full bg-secondary-700/50 rounded-b-[50%] rounded-t-[50%]"
+        initial={{ borderTopLeftRadius: "50%", borderTopRightRadius: "50%" }}
+        animate={{
+          borderTopLeftRadius: ["40%", "50%", "40%", "45%", "50%"],
+          borderTopRightRadius: ["50%", "45%", "40%", "50%", "40%"],
+        }}
+        transition={{
+          duration: 5,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
       <motion.img
         src="/picture.webp"
         alt="Profile Picture"

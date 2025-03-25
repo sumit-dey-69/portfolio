@@ -37,8 +37,8 @@ function HeroIntro({ className }: Props) {
         duration={0.5}
       />
 
-      <div className="grid grid-cols-[auto_1fr] gap-[1.5em] w-max mt-[1.75em] ml-[0.65em]">
-        <Button type="button" startX={-100} endX={0} delay={0.5} ease="easeOut">
+      <div className="grid grid-cols-[auto_1fr] gap-[1.5em] w-max mt-[1.75em]">
+        <Button type="button" delay={1} ease="easeIn">
           <span>Download CV</span>
           <BiDownload />
         </Button>

@@ -37,6 +37,8 @@
   --color-neutral-800: hsl(262, 17%, 90%);
   --color-neutral-900: hsl(262, 17%, 95%);
 
+  --color-default-background: hsl(262, 17%, 13%);
+
   --breakpoint-xs: 400px;
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;

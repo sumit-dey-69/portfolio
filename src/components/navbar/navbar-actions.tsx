@@ -1,4 +1,5 @@
 import { cn } from "@/utils/cn";
+import { useSetToggleHamburger } from "@/zustand/hamburger-state";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -15,10 +16,18 @@ const pages = [
 
 function NavbarActions({ className }: Props) {
   const pathname = usePathname();
+  const setToggleHamburger = useSetToggleHamburger();
   return (
     <div className={cn("space-x-4 *:hover:text-primary-500", className)}>
       {pages.map((page) => (
-        <Link key={page.name} href={page.path} className={`${pathname === page.path && "text-primary-400 font-bold"}`}>
+        <Link
+          key={page.name}
+          href={page.path}
+          className={`${
+            pathname === page.path && "text-primary-400 font-bold"
+          }`}
+          onClick={() => setToggleHamburger(false)}
+        >
           {page.name.charAt(0).toUpperCase() + page.name.slice(1)}
         </Link>
       ))}

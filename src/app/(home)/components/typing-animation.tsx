@@ -8,9 +8,18 @@ type Props = {
   className?: string;
   delay?: number;
   duration?: number;
+  repeat?: number;
+  repeatDelay?: number;
 };
 
-const TypingAnimation = ({ text, className, delay = 0.05, duration = 1 }: Props) => {
+const TypingAnimation = ({
+  text,
+  className,
+  delay = 0.05,
+  duration = 1,
+  repeat,
+  repeatDelay,
+}: Props) => {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -29,6 +38,8 @@ const TypingAnimation = ({ text, className, delay = 0.05, duration = 1 }: Props)
                 delay: index * delay,
                 duration: duration,
                 ease: "easeOut",
+                repeat: repeat,
+                repeatDelay: repeatDelay,
               }}
             >
               {char}

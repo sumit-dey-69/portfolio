@@ -1,4 +1,5 @@
 import Navbar from "@/components/navbar";
+import StairTransition from "@/components/transition/stair-transition";
 import "@/utils/font";
 import type { Metadata } from "next";
 import { Roboto_Mono, Tourney } from "next/font/google";
@@ -6,7 +7,7 @@ import "./globals.css";
 
 const roboto_mono = Roboto_Mono({
   subsets: ["latin"],
-  weight: [ "100", "200", "300", "400", "500", "600", "700"],
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
   display: "swap",
   style: "normal",
   variable: "--font-roboto-mono",
@@ -14,7 +15,7 @@ const roboto_mono = Roboto_Mono({
 
 const tourney = Tourney({
   subsets: ["latin"],
-  weight: [ "100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   display: "swap",
   style: "normal",
   variable: "--font-tourney",
@@ -36,10 +37,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`bg-neutral-50 text-white font-roboto-mono antialiased overflow-x-hidden grid grid-rows-[auto_1fr] min-h-screen px-5 ${tourney.variable} ${roboto_mono.variable}`}
+        className={`bg-neutral-50 text-white font-roboto-mono antialiased overflow-x-hidden min-h-screen px-5 ${tourney.variable} ${roboto_mono.variable}`}
       >
-        <Navbar />
-        {children}
+        <div className="grid grid-rows-[auto_1fr] min-h-screen">
+          <Navbar />
+          <div className="md:py-10 grid grid-rows-[auto_1fr]">
+            <StairTransition />
+            {/* <PageTransition>{children}</PageTransition> */}
+            {children}
+          </div>
+        </div>
       </body>
     </html>
   );

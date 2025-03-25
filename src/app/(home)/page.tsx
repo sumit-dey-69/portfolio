@@ -4,16 +4,18 @@ import TypingAnimation from "./components/typing-animation";
 
 function Home() {
   return (
-    <div className="m-auto size-full max-w-[75rem] @container grid grid-rows-[0.8fr_0.2fr] gap-10">
-      <div className="grid grid-cols-1 gap-10 md:grid-cols-2 @md:place-content-center @container">
-        <HeroIntro />
-        <HeroImage />
+    <div className="mx-auto h-full w-full max-w-[75rem] @container grid grid-rows-[auto_1fr] items-center gap-10">
+      <div className="grid grid-cols-1 gap-10 md:grid-cols-2 @md:place-content-center">
+        <HeroIntro className="@md:text-xl" />
+        <HeroImage className=" text-sm" />
       </div>
 
       <TypingAnimation
         className="text-center text-xl opacity-75 italic"
         text="A *Developer who loves *Designs and *Learning"
         delay={0.05}
+        repeat={Infinity}
+        repeatDelay={1}
       />
     </div>
   );
