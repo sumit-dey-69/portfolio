@@ -34,7 +34,7 @@ function Stairs() {
             ease: "easeInOut",
             delay: reverseIndex(index) * 0.1,
           }}
-          className="size-full bg-blue-950 relative"
+          className="size-full bg-[hsl(203, 89%, 53%)] relative"
         ></motion.div>
       ))}
     </>

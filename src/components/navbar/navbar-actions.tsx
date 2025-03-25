@@ -18,14 +18,12 @@ function NavbarActions({ className }: Props) {
   const pathname = usePathname();
   const setToggleHamburger = useSetToggleHamburger();
   return (
-    <div className={cn("space-x-4 *:hover:text-primary-500", className)}>
+    <div className={cn("space-x-4 *:hover:text-primary-500 transition-all", className)}>
       {pages.map((page) => (
         <Link
           key={page.name}
           href={page.path}
-          className={`${
-            pathname === page.path && "text-primary-400 font-bold"
-          }`}
+          className={cn(pathname === page.path && "text-primary-500 font-bold")}
           onClick={() => setToggleHamburger(false)}
         >
           {page.name.charAt(0).toUpperCase() + page.name.slice(1)}
