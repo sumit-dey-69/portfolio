@@ -25,6 +25,7 @@
   --color-secondary-600: hsl(190, 100%, 40%);
   --color-secondary-700: hsl(190, 100%, 30%);
   --color-secondary-800: hsl(190, 100%, 20%);
+  --color-secondary-900: hsl(190, 23%, 38%);
 
   --color-neutral-50: hsl(262, 17%, 13%);
   --color-neutral-100: hsl(262, 17%, 20%);
@@ -73,5 +74,9 @@
 
   .no-scrollbar::-webkit-scrollbar {
     display: none; /* Hides scrollbar in Chrome & Safari */
+  }
+
+  .h-resize {
+    height: calc(100vh - 7rem);
   }
 }

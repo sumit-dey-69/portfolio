@@ -10,6 +10,7 @@ type Props = ComponentProps<"button"> &
     delay?: number;
     duration?: number;
     ease?: string;
+    text?: string;
   }>;
 
 function Button({
@@ -19,6 +20,7 @@ function Button({
   duration = 0.5,
   ease,
   className,
+  text,
   ...props
 }: Props) {
   return (
@@ -35,6 +37,7 @@ function Button({
         )}
         {...props}
       >
+        {text}
         {children}
       </button>
     </motion.div>
