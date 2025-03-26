@@ -1,11 +1,12 @@
 "use client";
 import Button from "@/components/button";
 import { cn } from "@/utils/cn";
-import { useState } from "react";
+import { useActiveTab, useSetActiveTab } from "@/zustand/resume-tab-state";
 
 const Tabs = ["Skills", "Experience", "Education", "About me"];
 function LeftSection() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const activeIndex = useActiveTab();
+  const setActiveIndex = useSetActiveTab();
 
   return (
     <div className="space-y-5 overflow-hidden mx-auto">
